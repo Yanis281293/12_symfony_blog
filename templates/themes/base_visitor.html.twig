@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>
-			{% block title %}{% endblock %} - Le blog de Jean Dupont
+			{% block title %}{% endblock %}
+			- Le blog de Jean Dupont
 		</title>
 
 		<meta name="description" content="{% block description %}{% endblock %}">
@@ -60,13 +61,27 @@
 					</ul>
 
 					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Connexion</a>
-						</li>
+						{% if app.user %}
 
-						<li class="nav-item">
-							<a class="nav-link" href="{{path('visitor_registration_register')}}">Inscription</a>
-						</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">{{app.user.firstName}} {{app.user.lastName}}</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
+							</li>
+
+						{% else %}
+
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('visitor_authentication_login')}}">Connexion</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('visitor_registration_register')}}">Inscription</a>
+							</li>
+
+						{% endif %}
 					</ul>
 
 				</div>
