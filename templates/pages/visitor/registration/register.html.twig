@@ -18,7 +18,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('apple-touch-icon.png')}}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
@@ -44,32 +44,46 @@
 					<div class="row">
 
 						<div class="mb-3 col-md-6">
-							<label for="registration_form_firstName">Prénom <span class="text-danger">*</span></label>
+							<label for="registration_form_firstName">Prénom
+								<span class="text-danger">*</span>
+							</label>
 							<div class="text-danger">{{form_errors(registrationForm.firstName)}}</div>
 							{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control', 'autofocus': 'autofocus'}}) }}
 						</div>
 
 						<div class="mb-3 col-md-6">
-							<label for="registration_form_lastName">Nom <span class="text-danger">*</span></label>
+							<label for="registration_form_lastName">Nom
+								<span class="text-danger">*</span>
+							</label>
 							<div class="text-danger">{{form_errors(registrationForm.lastName)}}</div>
 							{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}
 						</div>
 
 						<div class="mb-3">
-							<label for="registration_form_email">Email <span class="text-danger">*</span></label>
+							<label for="registration_form_email">Email
+								<span class="text-danger">*</span>
+							</label>
 							<div class="text-danger">{{form_errors(registrationForm.email)}}</div>
 							{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
 						</div>
 
 						<div class="mb-3">
-							<label for="registration_form_password_first">Mot de passe <span class="text-danger">*</span></label>
+							<label for="registration_form_password_first">Mot de passe
+								<span class="text-danger">*</span>
+							</label>
 							<div class="text-danger">{{form_errors(registrationForm.password.first)}}</div>
 							{{ form_widget(registrationForm.password.first, {'attr': {'class': 'form-control'}}) }}
-                            <small><em><i class="text-warning fa-solid fa-triangle-exclamation"></i> Les mots de passe doivent avoir au moins 12 caractères</em></small>
+							<small>
+								<em>
+									<i class="text-warning fa-solid fa-triangle-exclamation"></i>
+									Les mots de passe doivent avoir au moins 12 caractères</em>
+							</small>
 						</div>
 
 						<div class="mb-3">
-							<label for="registration_form_password_second">Confirmation du mot de passe <span class="text-danger">*</span></label>
+							<label for="registration_form_password_second">Confirmation du mot de passe
+								<span class="text-danger">*</span>
+							</label>
 							<div class="text-danger">{{form_errors(registrationForm.password.second)}}</div>
 							{{ form_widget(registrationForm.password.second, {'attr': {'class': 'form-control'}}) }}
 						</div>
@@ -102,13 +116,25 @@
 						</div>
 
 						<div class="mb-3">
-							<input formnovalidate type="submit" class="btn btn-primary shadow" valu="S'inscrire">
+							<input formnovalidate type="submit" class="w-100 btn btn-primary shadow" valu="S'inscrire">
 						</div>
 
 					</div>
 					{{form_end(registrationForm)}}
-				</div>
 
+					<div class="text-center mt-3">
+
+						<p>Vous êtes déjà inscrits ?
+							<a href="{{path('visitor_authentication_login')}}">Connectez-vous</a>
+						</p>
+
+						<p>
+							<a href="{{path('visitor_welcome_index')}}">Retour à l'accueil</a>
+						</p>
+
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</body>
