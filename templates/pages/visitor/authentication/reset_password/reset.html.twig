@@ -1,0 +1,43 @@
+{% extends 'themes/base_visitor.html.twig' %}
+
+{% block title %}
+	Réinitialisation du mot de passe
+{% endblock %}
+
+{% block description %}
+	Réinitialisation du mot de passe
+{% endblock %}
+
+{% block main %}
+	<main>
+		<div class="container">
+			<h1 class="text-center my-3 display-5">Nouveau mot de passe</h1>
+
+			<div class="row my-5">
+				<div class="col-md-6 mx-auto">
+
+					{{ form_start(resetForm) }}
+
+					<div class="mb-3">
+                        <div class="text-danger">{{form_errors(resetForm.plainPassword.first)}}</div>
+						<label for="change_password_form_plainPassword_first">Nouveau mot de passe</label>
+						{{form_widget(resetForm.plainPassword.first, {'attr': {'class':'form-control', 'autofocus':'autofocus'}})}}
+					</div>
+
+					<div class="mb-3">
+                        <div class="text-danger">{{form_errors(resetForm.plainPassword.second)}}</div>
+						<label for="change_password_form_plainPassword_second">Confirmation du nouveau mot de passe</label>
+						{{form_widget(resetForm.plainPassword.second, {'attr': {'class':'form-control'}})}}
+					</div>
+
+					<div>
+						<input formnovalidate type="submit" class="btn btn-primary shadow" value="Réinitialiser">
+					</div>
+
+					{{ form_end(resetForm) }}
+				</div>
+
+			</div>
+		</div>
+	</main>
+{% endblock %}
