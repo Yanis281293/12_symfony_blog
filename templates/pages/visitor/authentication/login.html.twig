@@ -39,7 +39,7 @@
 					<img class="img-fluid" src="{{asset('images/visitor/authentication/Connectez-vous-pour-lire-des-articles-sur-la-sante.png')}}" alt="">
 				</div>
 
-				<div class="col-lg-5 d-flex justify-content-center align-items-center">
+				<div class="col-lg-5 d-flex flex-column justify-content-center align-items-center">
 					<form method="POST" class="w-100">
 						{% if error %}
 							<div class="text-center alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -76,11 +76,24 @@
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 						<div>
-							<input formnovalidate type="submit" class="btn btn-primary shadow" value="Se connecter">
+							<input formnovalidate type="submit" class="w-100 btn btn-primary shadow" value="Se connecter">
 						</div>
-					</form>
-				</div>
 
+					</form>
+
+					<div class="text-center mt-3">
+
+						<p>Vous n'êtes pas encore inscrits ?
+							<a href="{{path('visitor_registration_register')}}">Inscrivez-vous</a>
+						</p>
+
+						<p>
+							<a href="{{path('visitor_welcome_index')}}">Retour à l'accueil</a>
+						</p>
+
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</body>
