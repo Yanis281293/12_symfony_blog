@@ -97,8 +97,6 @@
 
 	<body>
 
-		{# Nav bar #}
-
 		<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
 			<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
 				<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
@@ -143,14 +141,15 @@
 			</ul>
 		</div>
 
+
+		{# Nav bar #}
+
 		<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
 			<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="{{path('visitor_welcome_index')}}">JD</a>
 			<ul class="navbar-nav flex-row d-md-none">
 				<li class="nav-item text-nowrap">
-
 					<button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
 						<i class="fa-solid fa-bars"></i>
-
 					</button>
 				</li>
 			</ul>
@@ -183,24 +182,27 @@
 										Les catégories
 									</a>
 								</li>
-                                
+
 							</ul>
 
 							<hr class="my-3">
 
 							<ul class="nav flex-column mb-auto">
+
 								<li class="nav-item">
 									<a class="nav-link d-flex align-items-center gap-2" href="{{path('visitor_welcome_index')}}">
 										<i class="fa-solid fa-rotate-left"></i>
 										Retour au site
 									</a>
 								</li>
+
 								<li class="nav-item">
 									<a class="nav-link d-flex align-items-center gap-2" href="{{path('app_logout')}}">
 										<i class="fa-solid fa-right-from-bracket"></i>
 										Déconnexion
 									</a>
 								</li>
+
 							</ul>
 						</div>
 					</div>
