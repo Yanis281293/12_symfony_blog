@@ -31,17 +31,13 @@ url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/fr-FR.json'
 {% block main %}
 	<h1 class="text-center my-3 display-5">Liste des catégories</h1>
 
-	{% for message in app.flashes('success') %}
-		<div class="text-center alert alert-success alert-dismissible fade show" role="alert">
-			{{message}}
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-	{% endfor %}
+	{% include 'components/alert.html.twig' %}
 
 	<div class="d-flex justify-content-end align-items-center my-3">
 		<a class="btn btn-primary shadow" href="{{path('admin_category_create')}}">
 			<i class="fa-solid fa-plus"></i>
-			Nouvelle catégorie</a>
+			Nouvelle catégorie
+		</a>
 	</div>
 
 	<div class="table-responsive">
